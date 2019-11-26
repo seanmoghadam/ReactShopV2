@@ -10,29 +10,37 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, "./dist"),
-    filename: "bundle.js"
+    filename: "bundle.js",
+    publicPath: '/'
   },
   module: {
     rules: [
       {
-        test: "/\.jsx?$/",
+        test: /\.jsx?$/,
         loader: "babel-loader",
         exclude: "/node_modules/",
-  
+        
         query: {
           presets: ["@babel/preset-env", "@babel/preset-react"],
           sourceMaps: true,
-          plugins: [],
+          plugins: [
+            "@babel/plugin-proposal-class-properties"
+          ],
         }
       }
     ]
+  },
+  devServer: {
+    contentBase: path.resolve(__dirname, 'public'),
+    port: 4000,
+    open: true
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/index.template.html",
       publicPath: "/",
       filename: "index.html",
-      inject: true
+      inject: true,
     })
   ]
   
