@@ -3,13 +3,13 @@ var path = require('path');
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  mode: "development",
+  mode: "production",
   entry: ["@babel/polyfill", "./src/index.js"],
   resolve: {
     extensions: [".js", ".jsx", ".scss", ".css"]
   },
   output: {
-    path: path.resolve(__dirname, "./dist"),
+    path: path.resolve(__dirname, "../dist"),
     filename: "bundle.js"
   },
   module: {
@@ -24,6 +24,14 @@ module.exports = {
           sourceMaps: true,
           plugins: [],
         }
+      },
+      {
+        test: /\.s?css$/,
+        use: [
+          "style-loader",
+          "css-loader",
+          "sass-loader"
+        ]
       }
     ]
   },
