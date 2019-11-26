@@ -5,15 +5,16 @@ import { btnReset, DrawerWidth } from '../../Global/styles';
 //Solution for prop warning of MUI
 export const NavBarWrapper = styled.div`
 
-width: 100%;
+position: fixed;
+ z-index: 100;
  display: flex;
  left: 0;
- background: white;
+ background-color: white;
  height: 50px;
  align-items: center;
-
+ width: ${props => props.isNavOpened ? "calc(100% - " + DrawerWidth + "px)" : "100%"};
+ transition: width 225ms cubic-bezier(0, 0, 0.2, 1) 0ms, opacity 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;
 `;
-
 
 export const NavBarInnerWrapper = styled.nav`
 display: flex;

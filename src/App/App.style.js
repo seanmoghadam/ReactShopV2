@@ -13,6 +13,8 @@ export const MainColWrapper = styled.div`
     flex-flow: column;
     width: ${props => props.isNavOpened ? "calc(100% - " + DrawerWidth + "px)" : "100%"};
     transition: width 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+    margin-top: 3em;
+
 `;
 
 
@@ -23,11 +25,18 @@ export const ContentWrapper = styled.main`
 
 
 export const DrawerWrapper = styled.div`
+
     width: ${props => props.isNavOpened ? DrawerWidth + "px" : 0};
     transition: width 225ms cubic-bezier(0, 0, 0.2, 1) 0ms, opacity 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;
     opacity: ${props => props.isNavOpened ? 1 : 0};
     box-shadow: ${props => props.isNavOpened ? "0px 0px 9px 0px rgba(0,0,0,0.35)" : 0};
     overflow: ${props => props.isNavOpened ? "unset" : "hidden"};
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 120;
+    
+    @media screen
 
 
 `;

@@ -82,17 +82,17 @@ export default class App extends React.Component {
       }}>
         
         <GlobalStyles/>
+        <Navigation/>
         <MainWrapper>
           <MainColWrapper isNavOpened={isNavOpened}>
-            <Navigation/>
             <ContentWrapper>
               {routes}
             </ContentWrapper>
           </MainColWrapper>
-          <DrawerWrapper isNavOpened={isNavOpened}>
-            <Cart/>
-          </DrawerWrapper>
         </MainWrapper>
+        <DrawerWrapper isNavOpened={isNavOpened}>
+          <Cart/>
+        </DrawerWrapper>
       </AppContext.Provider>
     </div>
     

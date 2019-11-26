@@ -17,7 +17,7 @@ const Navigation = () => {
         return <React.Fragment>
           <NavBarWrapper isNavOpened={context.isNavOpened}>
             <NavBarInnerWrapper>
-              <Link to="/">Home</Link>
+              <Link to="/">BookShop</Link>
               <CartButton onClick={() => context.handleNavToggle(!context.isNavOpened)}>
                 {cartItem}
               </CartButton>
