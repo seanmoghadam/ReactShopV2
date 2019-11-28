@@ -12,6 +12,10 @@ const Navigation = (props) => {
   
 };
 
+Navigation.defaultProps = {
+
+};
+
 
 Navigation.propTypes = {
   title: PropTypes.string.isRequired,

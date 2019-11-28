@@ -22,7 +22,9 @@ module.exports = {
         query: {
           presets: ["@babel/preset-env", "@babel/preset-react"],
           sourceMaps: true,
-          plugins: [],
+          plugins: [
+            "@babel/plugin-proposal-class-properties"
+          ],
         }
       },
       {

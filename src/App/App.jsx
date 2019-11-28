@@ -1,12 +1,14 @@
 import React from "react";
 import Navigation from './Components/Navigation/Navigation';
+import Form from './Components/Form/Form';
 
 export default class App extends React.Component {
   
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      loading: true
+      loading: true,
+      title: ""
     }
     
   }
@@ -21,15 +23,32 @@ export default class App extends React.Component {
   }
   
   static getDerivedStateFromProps() {
-    return {
-    
-    }
+    return {}
   }
+  
+  updateTitle = (event) => {
+    
+    const inputValue = event.target.value;
+    
+    this.setState({
+      title: inputValue
+    })
+    
+  };
+  
   
   render() {
     return <div>
-      <Navigation />
+      <Navigation title={this.state.title} disableButton={true}/>
       <h1>Ich bin App Komponente</h1>
+      
+      <input type="text"
+             value={this.state.title}
+             onChange={this.updateTitle}/>
+             
+      <Form title={this.state.title} updateTitle={this.updateTitle}/>
+    
+    
     </div>
   }
   
