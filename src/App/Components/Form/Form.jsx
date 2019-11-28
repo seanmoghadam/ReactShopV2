@@ -1,14 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Form = (props) => {
   
-  return <div>
+  const [formState, updateFormState] = useState(
+    {
+      firstName: "",
+      lastName: ""
+    }
+  );
+  
+  const updateFirstName = (e) => {
+    const inputValue = e.target.value;
+    updateFormState({
+      ...formState,
+      firstName: inputValue,
+    })
+  };
+  
+  return <form>
     <h2>Form Component</h2>
-    <input type="text"
-           value={props.title}
-           onChange={props.updateTitle}/>
-    
-  </div>
+    <label>Vorname</label>
+    <input type="text" value={formState.firstName} onChange={updateFirstName}/>
+  
+  
+  </form>
   
 };
 export default Form;
