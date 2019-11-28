@@ -1,25 +1,26 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-export default class Navigation extends React.Component {
+const Navigation = (props) => {
   
-  constructor(props) {
-    super(props);
-    this.state = {
-      loading: true
-    }
-    
-  }
-  
-  render() {
-    return <div>
-      {this.props.title}
-      <button disabled={this.props.disableButton}>
+  return <div>
+    {props.title}
+    <button disabled={props.disableButton}>
       Klick mich
-      </button>
-    </div>
-  }
+    </button>
+  </div>
   
-}
+};
+
+
+Navigation.propTypes = {
+  title: PropTypes.string.isRequired,
+  disableButton : PropTypes.bool.isRequired
+};
+
+export default Navigation;
+
+
 
 
 

@@ -28,9 +28,8 @@ export default class App extends React.Component {
   
   render() {
     return <div>
-      <Navigation title={"Hallo ich bin die Navigation"} disableButton={true}/>
+      <Navigation />
       <h1>Ich bin App Komponente</h1>
-      
     </div>
   }
   
