@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from 'prop-types';
+
 
 export default class Navigation extends React.Component {
   
@@ -14,12 +16,18 @@ export default class Navigation extends React.Component {
     return <div>
       {this.props.title}
       <button disabled={this.props.disableButton}>
-      Klick mich
+        Klick mich
       </button>
     </div>
   }
   
 }
+
+const { string, bool } = PropTypes;
+Navigation.propTypes = {
+  title: string.isRequired,
+  disableButton: bool.isRequired
+};
 
 
 
