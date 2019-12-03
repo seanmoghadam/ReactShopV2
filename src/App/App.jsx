@@ -1,6 +1,10 @@
 import React from "react";
 import Navigation from './Components/Navigation/Navigation';
-import Form from './Components/Form/Form';
+import { allBooks } from '../api';
+import Loading from './Components/Loading/Loading';
+import BookListing from './Components/BookListing/BookListing';
+import { MainWrapper, ContentWrapper, MainColWrapper, DrawerWrapper } from './App.style';
+
 
 export default class App extends React.Component {
   
@@ -8,14 +12,24 @@ export default class App extends React.Component {
     super(props);
     this.state = {
       loading: true,
-      title: ""
+      books: []
     }
     
   }
   
   //wird direkt nach dem erstellen der Komponente ausgeführt
   componentDidMount() {
-  
+    allBooks()
+      .then(books => {
+        this.setState({ books })
+      })
+      .catch(e => console.error(e))
+      .finally(() => {
+        this.setState({
+          loading: false
+        })
+      })
+    
   }
   
   //wird direkt nach dem zerstören der komponente ausgeführt
@@ -26,27 +40,30 @@ export default class App extends React.Component {
     return {}
   }
   
-  updateTitle = (event) => {
-    
-    const inputValue = event.target.value;
-    
-    this.setState({
-      title: inputValue
-    })
-    
-  };
-  
   
   render() {
+    
+    const { books, loading } = this.state;
     return <div>
       <Navigation title={this.state.title} disableButton={true}/>
-      <h1>Ich bin App Komponente</h1>
+      <Loading loading={loading}/>
+      {/* {loading ? "Lädt..." : ""}*/}
       
-      <input type="text"
-             value={this.state.title}
-             onChange={this.updateTitle}/>
-             
-      <Form title={this.state.title} updateTitle={this.updateTitle}/>
+     
+     
+      <MainWrapper>
+        <MainColWrapper isNavOpened={true}>
+          <ContentWrapper>
+            {!loading && <BookListing books={books}/>}
+          </ContentWrapper>
+        </MainColWrapper>
+        <DrawerWrapper isNavOpened={true}>
+        
+        </DrawerWrapper>
+
+      </MainWrapper>
+      
+      
     
     
     </div>

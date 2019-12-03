@@ -8,6 +8,7 @@ const Form = (props) => {
       lastName: ""
     }
   );
+
   
   const updateFirstName = (e) => {
     const inputValue = e.target.value;
