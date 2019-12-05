@@ -4,6 +4,7 @@ import { allBooks } from '../api';
 import Loading from './Components/Loading/Loading';
 import BookListing from './Components/BookListing/BookListing';
 import { MainWrapper, ContentWrapper, MainColWrapper, DrawerWrapper } from './App.style';
+import Cart from './Components/Cart/Cart';
 
 
 export default class App extends React.Component {
@@ -48,20 +49,19 @@ export default class App extends React.Component {
       <Navigation title={this.state.title} disableButton={true}/>
       <Loading loading={loading}/>
       {/* {loading ? "Lädt..." : ""}*/}
-      
-     
-     
+  
+  
+  
+      <Navigation/>
       <MainWrapper>
-        <MainColWrapper isNavOpened={true}>
+        <MainColWrapper isNavOpened={false}>
           <ContentWrapper>
-            {!loading && <BookListing books={books}/>}
+            <BookListing books={books}/>
           </ContentWrapper>
         </MainColWrapper>
-        <DrawerWrapper isNavOpened={true}>
-        
-        </DrawerWrapper>
-
       </MainWrapper>
+      <DrawerWrapper isNavOpened={false}>
+      </DrawerWrapper>
       
       
     

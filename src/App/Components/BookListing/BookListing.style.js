@@ -4,7 +4,7 @@ import {btnReset} from '../../Global/styles';
 
 export const BookOverviewHeadline = styled.h1`
 
-margin-top: 100px;
+margin-top: 10px;
 
 
 `;

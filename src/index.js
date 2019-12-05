@@ -1,10 +1,12 @@
-import "./index.scss";
+// Just for presentational purpose
+// import "./index.scss";
 import React from "react";
-import {render} from "react-dom";
-import App from './App/App';
+import ReactDOM from "react-dom";
+import App from "./App/App";
+import { BrowserRouter as Router } from 'react-router-dom';
 
-
-render(
-  <App/>,
-  document.getElementById("root")
-);
+ReactDOM.render(
+  <Router>
+    <App/>
+  </Router>
+  , document.getElementById("root"));
