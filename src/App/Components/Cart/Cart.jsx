@@ -17,10 +17,10 @@ const Cart = (props) => {
     </CartHeader>
     <hr/>
     <CartList>
-      {props.cart.map((cartItem, key) => {
-        return <CartListItem key={cartItem.isbn + key }>
+      {props.cart.map((cartItem, index) => {
+        return <CartListItem key={cartItem.isbn + index }>
           <p>{cartItem.title} - <strong>{cartItem.price} €</strong></p>
-          <button>
+          <button onClick={() => props.removeItemFromCart(index)}>
             {deleteIcon}
           </button>
         </CartListItem>
@@ -29,8 +29,10 @@ const Cart = (props) => {
     <CartFooter>
 
       <span>
+        Preis:
       </span>
       <span>
+      
       </span>
     
     </CartFooter>

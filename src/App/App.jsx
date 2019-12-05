@@ -45,8 +45,13 @@ export default class App extends React.Component {
     }, () => console.log(this.state))
   };
   
-  removeItemFromCart = () => {
-  
+  removeItemFromCart = (index) => {
+    let copiedCart = [...this.state.cart];
+    copiedCart.splice(index, 1);
+    this.setState({
+      cart: copiedCart
+    })
+    
   };
   
   
@@ -56,6 +61,7 @@ export default class App extends React.Component {
     return <div>
       <Navigation title={this.state.title} disableButton={true}/>
       <Loading loading={loading}/>
+      
       {/* {loading ? "Lädt..." : ""}*/}
       
       <Navigation/>
@@ -71,7 +77,8 @@ export default class App extends React.Component {
         </MainColWrapper>
       </MainWrapper>
       <DrawerWrapper isNavOpened={true}>
-        <Cart cart={cart}/>
+        <Cart cart={cart}
+              removeItemFromCart={this.removeItemFromCart}/>
       </DrawerWrapper>
     
     </div>
