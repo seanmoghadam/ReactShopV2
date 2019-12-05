@@ -14,7 +14,6 @@ export const MainColWrapper = styled.div`
     width: ${props => props.isNavOpened ? "calc(100% - " + DrawerWidth + "px)" : "100%"};
     transition: width 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;
     margin-top: 3em;
-
 `;
 
 
@@ -35,10 +34,6 @@ export const DrawerWrapper = styled.div`
     right: 0;
     top: 0;
     z-index: 120;
-    
-    @media screen
-
-
 `;
 
 
