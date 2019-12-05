@@ -13,7 +13,8 @@ export default class App extends React.Component {
     this.state = {
       loading: true,
       books: [],
-      cart: []
+      cart: [],
+      isNavOpened: false
     }
   }
   
@@ -51,22 +52,31 @@ export default class App extends React.Component {
     this.setState({
       cart: copiedCart
     })
+  };
+  
+  toggleNav = () => {
+    this.setState({
+      isNavOpened: !this.state.isNavOpened
+    })
     
   };
   
   
   render() {
     
-    const { books, loading, cart } = this.state;
+    const { books, loading, cart, isNavOpened } = this.state;
     return <div>
-      <Navigation title={this.state.title} disableButton={true}/>
+      <Navigation title={this.state.title}
+                  disableButton={true}
+                  toggleNav={this.toggleNav}/>
+                  
       <Loading loading={loading}/>
       
       {/* {loading ? "Lädt..." : ""}*/}
       
       <Navigation/>
       <MainWrapper>
-        <MainColWrapper isNavOpened={true}>
+        <MainColWrapper isNavOpened={isNavOpened}>
           <ContentWrapper>
             {!loading &&
             <BookListing
@@ -76,7 +86,7 @@ export default class App extends React.Component {
           </ContentWrapper>
         </MainColWrapper>
       </MainWrapper>
-      <DrawerWrapper isNavOpened={true}>
+      <DrawerWrapper isNavOpened={isNavOpened}>
         <Cart cart={cart}
               removeItemFromCart={this.removeItemFromCart}/>
       </DrawerWrapper>

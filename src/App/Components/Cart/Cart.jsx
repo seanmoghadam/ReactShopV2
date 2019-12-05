@@ -11,6 +11,8 @@ const deleteIcon = <svg xmlns="http://www.w3.org/2000/svg"
 
 const Cart = (props) => {
   
+  let totalPrice = 0;
+  
   return <CartWrapper>
     <CartHeader>
       Warenkorb
@@ -18,6 +20,9 @@ const Cart = (props) => {
     <hr/>
     <CartList>
       {props.cart.map((cartItem, index) => {
+        
+        totalPrice += cartItem.price;
+        
         return <CartListItem key={cartItem.isbn + index }>
           <p>{cartItem.title} - <strong>{cartItem.price} €</strong></p>
           <button onClick={() => props.removeItemFromCart(index)}>
@@ -32,6 +37,8 @@ const Cart = (props) => {
         Preis:
       </span>
       <span>
+        
+        {totalPrice.toFixed(2)} €
       
       </span>
     
@@ -39,4 +46,6 @@ const Cart = (props) => {
   
   </CartWrapper>
 };
+
+
 export default Cart;
