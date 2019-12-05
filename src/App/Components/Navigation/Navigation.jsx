@@ -10,7 +10,7 @@ const DrawerIcon = <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24
 const Navigation = (props) => {
   console.log(props);
   
-  return <NavBarWrapper>
+  return <NavBarWrapper isNavOpened={props.isNavOpened}>
     <NavBar>
       Reactshop
       <CartButton onClick={() => props.toggleNav()}>
