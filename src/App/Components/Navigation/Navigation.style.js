@@ -4,8 +4,7 @@ import { btnReset, DrawerWidth } from '../../Global/styles';
 
 //Solution for prop warning of MUI
 export const NavBarWrapper = styled.div`
-
-position: fixed;
+ position: fixed;
  z-index: 100;
  display: flex;
  left: 0;

@@ -6,6 +6,8 @@ import BookListing from './Components/BookListing/BookListing';
 import { ContentWrapper, DrawerWrapper, MainColWrapper, MainWrapper } from './App.style';
 import Cart from './Components/Cart/Cart';
 
+export const AppContext = React.createContext({});
+
 export default class App extends React.Component {
   
   constructor(props) {
@@ -64,12 +66,18 @@ export default class App extends React.Component {
   render() {
     
     const { books, loading, cart, isNavOpened } = this.state;
+    
     return <div>
-      <Navigation title={this.state.title}
-                  disableButton={true}
-                  toggleNav={this.toggleNav}
-                  isNavOpened={isNavOpened}
-      />
+      <AppContext.Provider value={{
+        isNavOpened,
+        books,
+        cart,
+        addItemToCart: this.addItemToCart,
+        removeItemFromCart: this.removeItemFromCart,
+        toggleNav: this.toggleNav
+      }}>
+      
+      <Navigation />
       
       <Loading loading={loading}/>
       
@@ -90,6 +98,7 @@ export default class App extends React.Component {
         <Cart cart={cart}
               removeItemFromCart={this.removeItemFromCart}/>
       </DrawerWrapper>
+      </AppContext.Provider>
     
     </div>
   }
