@@ -58,7 +58,6 @@ export default class App extends React.Component {
     this.setState({
       isNavOpened: !this.state.isNavOpened
     })
-    
   };
   
   
@@ -68,13 +67,14 @@ export default class App extends React.Component {
     return <div>
       <Navigation title={this.state.title}
                   disableButton={true}
-                  toggleNav={this.toggleNav}/>
-                  
+                  toggleNav={this.toggleNav}
+                  isNavOpened={isNavOpened}
+      />
+      
       <Loading loading={loading}/>
       
       {/* {loading ? "Lädt..." : ""}*/}
       
-      <Navigation/>
       <MainWrapper>
         <MainColWrapper isNavOpened={isNavOpened}>
           <ContentWrapper>
