@@ -1,5 +1,5 @@
 import * as React from "react";
-import { CartFooter, CartHeader, CartList, CartWrapper } from './Cart.style';
+import { CartFooter, CartHeader, CartList, CartWrapper, CartListItem } from './Cart.style';
 
 const deleteIcon = <svg xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -9,15 +9,22 @@ const deleteIcon = <svg xmlns="http://www.w3.org/2000/svg"
 </svg>;
 
 
-const Cart = () => {
+const Cart = (props) => {
   
   return <CartWrapper>
     <CartHeader>
+      Warenkorb
     </CartHeader>
     <hr/>
     <CartList>
-    
-    
+      {props.cart.map((cartItem, key) => {
+        return <CartListItem key={cartItem.isbn + key }>
+          <p>{cartItem.title} - <strong>{cartItem.price} €</strong></p>
+          <button>
+            {deleteIcon}
+          </button>
+        </CartListItem>
+      })}
     </CartList>
     <CartFooter>
 

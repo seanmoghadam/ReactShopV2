@@ -3,9 +3,8 @@ import Navigation from './Components/Navigation/Navigation';
 import { allBooks } from '../api';
 import Loading from './Components/Loading/Loading';
 import BookListing from './Components/BookListing/BookListing';
-import { MainWrapper, ContentWrapper, MainColWrapper, DrawerWrapper } from './App.style';
+import { ContentWrapper, DrawerWrapper, MainColWrapper, MainWrapper } from './App.style';
 import Cart from './Components/Cart/Cart';
-
 
 export default class App extends React.Component {
   
@@ -13,9 +12,9 @@ export default class App extends React.Component {
     super(props);
     this.state = {
       loading: true,
-      books: []
+      books: [],
+      cart: []
     }
-    
   }
   
   //wird direkt nach dem erstellen der Komponente ausgeführt
@@ -30,7 +29,6 @@ export default class App extends React.Component {
           loading: false
         })
       })
-    
   }
   
   //wird direkt nach dem zerstören der komponente ausgeführt
@@ -41,30 +39,40 @@ export default class App extends React.Component {
     return {}
   }
   
+  addItemToCart = (book) => {
+    this.setState({
+      cart: [...this.state.cart, book]
+    }, () => console.log(this.state))
+  };
+  
+  removeItemFromCart = () => {
+  
+  };
+  
   
   render() {
     
-    const { books, loading } = this.state;
+    const { books, loading, cart } = this.state;
     return <div>
       <Navigation title={this.state.title} disableButton={true}/>
       <Loading loading={loading}/>
       {/* {loading ? "Lädt..." : ""}*/}
-  
-  
-  
+      
       <Navigation/>
       <MainWrapper>
-        <MainColWrapper isNavOpened={false}>
+        <MainColWrapper isNavOpened={true}>
           <ContentWrapper>
-            {!loading && <BookListing books={books}/>}
+            {!loading &&
+            <BookListing
+              books={books}
+              addItemToCart={this.addItemToCart}
+            />}
           </ContentWrapper>
         </MainColWrapper>
       </MainWrapper>
-      <DrawerWrapper isNavOpened={false}>
+      <DrawerWrapper isNavOpened={true}>
+        <Cart cart={cart}/>
       </DrawerWrapper>
-      
-      
-    
     
     </div>
   }
