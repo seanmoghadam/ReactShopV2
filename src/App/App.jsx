@@ -56,7 +56,7 @@ export default class App extends React.Component {
       <MainWrapper>
         <MainColWrapper isNavOpened={false}>
           <ContentWrapper>
-            <BookListing books={books}/>
+            {!loading && <BookListing books={books}/>}
           </ContentWrapper>
         </MainColWrapper>
       </MainWrapper>
