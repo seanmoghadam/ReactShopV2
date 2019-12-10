@@ -2,9 +2,9 @@ import React from "react";
 import Navigation from './Components/Navigation/Navigation';
 import { allBooks } from '../api';
 import Loading from './Components/Loading/Loading';
-import BookListing from './Components/BookListing/BookListing';
 import { ContentWrapper, DrawerWrapper, MainColWrapper, MainWrapper } from './App.style';
 import Cart from './Components/Cart/Cart';
+import routes from '../routes';
 
 export const AppContext = React.createContext({});
 
@@ -76,28 +76,25 @@ export default class App extends React.Component {
         removeItemFromCart: this.removeItemFromCart,
         toggleNav: this.toggleNav
       }}>
-      
-      <Navigation />
-      
-      <Loading loading={loading}/>
-      
-      {/* {loading ? "Lädt..." : ""}*/}
-      
-      <MainWrapper>
-        <MainColWrapper isNavOpened={isNavOpened}>
-          <ContentWrapper>
-            {!loading &&
-            <BookListing
-              books={books}
-              addItemToCart={this.addItemToCart}
-            />}
-          </ContentWrapper>
-        </MainColWrapper>
-      </MainWrapper>
-      <DrawerWrapper isNavOpened={isNavOpened}>
-        <Cart cart={cart}
-              removeItemFromCart={this.removeItemFromCart}/>
-      </DrawerWrapper>
+        
+        <Navigation/>
+        
+        <Loading loading={loading}/>
+        
+        {/* {loading ? "Lädt..." : ""}*/}
+        
+        <MainWrapper>
+          <MainColWrapper isNavOpened={isNavOpened}>
+            <ContentWrapper>
+              {!loading &&
+              routes}
+            </ContentWrapper>
+          </MainColWrapper>
+        </MainWrapper>
+        <DrawerWrapper isNavOpened={isNavOpened}>
+          <Cart cart={cart}
+                removeItemFromCart={this.removeItemFromCart}/>
+        </DrawerWrapper>
       </AppContext.Provider>
     
     </div>

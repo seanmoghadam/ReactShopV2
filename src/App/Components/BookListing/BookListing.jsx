@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 import {
   BookOverviewHeadline,
@@ -8,6 +7,8 @@ import {
   CartBtn
 } from './BookListing.style';
 import { AppContext } from '../../App';
+
+import { Link } from "react-router-dom";
 
 
 const addSVG = <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -28,7 +29,9 @@ const BookListing = () => {
                 context.books.map((book, index) =>
                   <BookOverviewListItem key={book.isbn + index}>
                     <p>{book.title}</p>
-                    <img src={book.image} alt={book.title}/>
+                    <Link to={"/details/" + book.isbn}>
+                      <img src={book.image} alt={book.title}/>
+                    </Link>
                     <CartBtn onClick={() => context.addItemToCart(book)}>
                       {addSVG}
                     </CartBtn>
@@ -47,10 +50,7 @@ const BookListing = () => {
   
 };
 
-BookListing.propTypes = {
-  books: PropTypes.array.isRequired,
-  addItemToCart: PropTypes.func.isRequired
-};
+BookListing.propTypes = {};
 
 export default BookListing;
 
