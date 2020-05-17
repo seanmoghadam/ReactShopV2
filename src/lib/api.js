@@ -1,6 +1,6 @@
 const books = [
     {
-        isbn: "9781593275846",
+        isbn: "97815932758463",
         title: "Eloquent JavaScript, Second Edition",
         subtitle: "A Modern Introduction to Programming",
         author: "Marijn Haverbeke",
@@ -15,7 +15,7 @@ const books = [
         website: "http://eloquentjavascript.net/"
     },
     {
-        isbn: "9781449331818",
+        isbn: "9781234564321449331818",
         title: "Learning JavaScript Design Patterns",
         subtitle: "A JavaScript and jQuery Developer's Guide",
         author: "Addy Osmani",
@@ -31,7 +31,7 @@ const books = [
           "http://www.addyosmani.com/resources/essentialjsdesignpatterns/book/"
     },
     {
-        isbn: "9781449365035",
+        isbn: "9781449368765435675035",
         title: "Speaking JavaScript",
         subtitle: "An In-Depth Guide for Programmers",
         author: "Axel Rauschmayer",
@@ -46,7 +46,7 @@ const books = [
         website: "http://speakingjs.com/"
     },
     {
-        isbn: "9781491950296",
+        isbn: "97814919098789050296",
         title: "Programming JavaScript Applications",
         subtitle:
           "Robust Web Architecture with Node, HTML5, and Modern JS Libraries",
@@ -63,7 +63,7 @@ const books = [
           "http://chimera.labs.oreilly.com/books/1234000000262/index.html"
     },
     {
-        isbn: "9781593275846",
+        isbn: "978159327584dd6",
         title: "Eloquent JavaScript, Second Edition",
         subtitle: "A Modern Introduction to Programming",
         author: "Marijn Haverbeke",
@@ -78,7 +78,7 @@ const books = [
         website: "http://eloquentjavascript.net/"
     },
     {
-        isbn: "9781449331818",
+        isbn: "97814493318dsdds18",
         title: "Learning JavaScript Design Patterns",
         subtitle: "A JavaScript and jQuery Developer's Guide",
         author: "Addy Osmani",
@@ -94,7 +94,7 @@ const books = [
           "http://www.addyosmani.com/resources/essentialjsdesignpatterns/book/"
     },
     {
-        isbn: "9781449365035",
+        isbn: "978144936asdasdas5035",
         title: "Speaking JavaScript",
         subtitle: "An In-Depth Guide for Programmers",
         author: "Axel Rauschmayer",
@@ -109,7 +109,7 @@ const books = [
         website: "http://speakingjs.com/"
     },
     {
-        isbn: "9781491950296",
+        isbn: "97814919adsdas50296",
         title: "Programming JavaScript Applications",
         subtitle:
           "Robust Web Architecture with Node, HTML5, and Modern JS Libraries",
@@ -126,7 +126,7 @@ const books = [
           "http://chimera.labs.oreilly.com/books/1234000000262/index.html"
     },
     {
-        isbn: "9781593275846",
+        isbn: "9781593275asdasd846",
         title: "Eloquent JavaScript, Second Edition",
         subtitle: "A Modern Introduction to Programming",
         author: "Marijn Haverbeke",
@@ -141,7 +141,7 @@ const books = [
         website: "http://eloquentjavascript.net/"
     },
     {
-        isbn: "9781449331818",
+        isbn: "9781449331345534818",
         title: "Learning JavaScript Design Patterns",
         subtitle: "A JavaScript and jQuery Developer's Guide",
         author: "Addy Osmani",
@@ -157,7 +157,7 @@ const books = [
           "http://www.addyosmani.com/resources/essentialjsdesignpatterns/book/"
     },
     {
-        isbn: "9781449365035",
+        isbn: "9781449365345345035",
         title: "Speaking JavaScript",
         subtitle: "An In-Depth Guide for Programmers",
         author: "Axel Rauschmayer",
@@ -172,7 +172,7 @@ const books = [
         website: "http://speakingjs.com/"
     },
     {
-        isbn: "9781491950296",
+        isbn: "97814919345345350296",
         title: "Programming JavaScript Applications",
         subtitle:
           "Robust Web Architecture with Node, HTML5, and Modern JS Libraries",
@@ -189,7 +189,7 @@ const books = [
           "http://chimera.labs.oreilly.com/books/1234000000262/index.html"
     },
     {
-        isbn: "9781593277574",
+        isbn: "978159323453453477574",
         title: "Understanding ECMAScript 6",
         subtitle: "The Definitive Guide for JavaScript Developers",
         author: "Nicholas C. Zakas",

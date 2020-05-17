@@ -1,8 +1,8 @@
 import React from "react";
 import {Switch, Route} from "react-router-dom";
-import BookListing from './App/Components/BookListing/BookListing';
-import BookDetails from './App/Components/BookDetails/BookDetails';
-import Error from "./App/Components/Error/Error"
+import BookListing from '../App/Components/BookListing/BookListing';
+import BookDetails from '../App/Components/BookDetails/BookDetails';
+import Error from "../App/Components/Error/Error"
 
 
 export default <Switch>

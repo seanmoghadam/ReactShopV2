@@ -1,18 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {LoadingWrapper} from './Loading.style';
+import "./Loading.scss"
 
 const Loading = (props) => {
-  
-  return props.loading &&
-    <LoadingWrapper>
-      Lädt...
-    </LoadingWrapper>
-  
+
+    return props.loading &&
+        <div className="loading-wrapper">
+            Lädt...
+        </div>
 };
 
 Loading.propTypes = {
-  loading: PropTypes.bool
+    loading: PropTypes.bool
 };
 
 export default Loading

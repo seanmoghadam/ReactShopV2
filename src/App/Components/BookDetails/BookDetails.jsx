@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { getBookById } from '../../../api';
+import { getBookById } from '../../../lib/api';
 
 const BookDetails = (props) => {
   const [book, setBook] = useState({});
   const [loading, setLoading] = useState(false);
-  
+
   useEffect(() => {
     getBookById(props.match.params.id)
       .then(book => {
@@ -12,10 +12,10 @@ const BookDetails = (props) => {
       })
       .catch(e => console.error(e))
       .finally(() => setLoading(false))
-    
+
   }, []);
-  
-  
+
+
   return <div>
     {!loading && <p>{book.title}</p>}
   </div>
